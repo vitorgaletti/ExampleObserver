@@ -9,16 +9,16 @@ public class Financeiro {
 
     public String precoTotal() {
 
-        double total = Facade.total = 0.0;
+        Facade.total = 0.0;
 
         for (int i = 0; i < listaRoupas.size(); i++) {
-            total += listaRoupas.get(i).getPreco();
+            Facade.total += listaRoupas.get(i).getPreco();
 
         }
         if (listaRoupas.isEmpty()) {
             return "\nNenhuma Roupa para Pagar!";
         }
-        return "Valor a ser pago pelo cliente: R$" + String.format("%.2f", total);
+        return "Valor a ser pago pelo cliente: R$" + String.format("%.2f", Facade.total);
     }
 
     public void realizarPagamento(double valorPago) {
